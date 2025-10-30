@@ -1,0 +1,77 @@
+﻿import React from "react";
+
+export default function Hero() {
+  return (
+    <div className="max-w-7xl mx-auto py-6 sm:px-6 sm:py-12 md:px-12 md:py-24">
+      <div className="flex flex-col lg:flex-row">
+        {/* Left text */}
+        <div
+          className="w-full lg:w-1/3 p-10 prose"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          <h1 className="text-7xl text-gray-600 leading-tight">Bears eat Beets</h1>
+          <h1 className="text-3xl text-gray-600">BEARS</h1>
+          <h1 className="text-3xl text-gray-600">BEATS</h1>
+          <h1 className="text-7xl text-gray-600">Battlestar Gallactica</h1>
+
+          <p className="text-2xl text-gray-600 font-light mt-8 leading-relaxed">
+            Nullam tincidunt felis eget blandit aliquam. Nunc vel mollis lorem.
+            Phasellus pharetra commodo ultricies. Mauris scelerisque elit sed arcu
+            consectetur hendrerit et sit amet ligula.
+          </p>
+
+          <div className="mt-8 inline-flex gap-x-6 pt-2">
+            {/* Instagram */}
+            <a href="#">
+              <svg className="w-12 h-12 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 122.88">
+                <path d="M61.45,0C44.76,0,42.66.07,36.11...." />
+              </svg>
+            </a>
+            {/* Twitter */}
+            <a href="#">
+              <svg className="w-12 h-12 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 333333">
+                <path d="M333328 63295c-12254 5480...." />
+              </svg>
+            </a>
+            {/* Facebook */}
+            <a href="#">
+              <svg className="w-12 h-12 fill-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path d="M380.001 120.001h99.993V0...." />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Right gallery */}
+        <div
+          className="w-full lg:w-2/3 py-8 px-10 grid grid-cols-4 gap-4"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          <div className="h-64 col-span-4 relative">
+            <img className="rounded-md w-full h-full object-cover" src="https://cafefcdn.com/203337114487263232/2023/9/27/17-2299-1695818398972-16958183990901425659148.jpg" />
+          </div>
+
+          <div className="h-64 col-span-4 sm:col-span-2 relative">
+            <img className="rounded-lg w-full h-full object-cover" src="https://ongvang.vn/thumbnails/posts/large/uploads/2024/09/ngoi-prime-3-1.jpg.webp" />
+          </div>
+
+          <div className="h-64 col-span-4 sm:col-span-2 relative">
+            <img className="rounded-sm w-full h-full object-cover" src="https://ongvang.vn/uploads/c881b40ebef063b28dfe66277ce037c3.webp" />
+          </div>
+
+          <div className="h-64 col-span-4 sm:col-span-3 relative">
+            <img className="rounded-md w-full h-full object-cover" src="https://ongvang.vn/thumbnails/posts/large/uploads/20250917-1028-mau-ngoi-lop-remix-01k5avbazsf4ps542nq0npanpp.jpg.webp" />
+          </div>
+
+          <div className="h-64 col-span-4 sm:col-span-1 relative">
+            <img className="rounded-md w-full h-full object-cover" src="https://ongvang.vn/thumbnails/posts/large/uploads/20250913-1554-ngoi-mau-do-remix-01k514d2tne5atrked23417804-1.webp" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
