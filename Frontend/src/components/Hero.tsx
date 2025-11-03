@@ -1,88 +1,115 @@
-﻿// src/components/Hero.tsx
+﻿import { useState } from "react"
+import { Truck, ShieldCheck, Clock, Phone, Boxes, Search, ChevronLeft, ChevronRight } from "lucide-react"
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-light to-white">
-      
+    <section className="relative isolate overflow-hidden">
+      {/* Ảnh nền tối màu */}
+      <div className="absolute inset-0 -z-20">
+        <img
+          src="https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?auto=format&fit=crop&q=80&w=1400"
+          alt="Công trường xây dựng"
+          className="h-full w-full object-cover brightness-[0.35]"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      {/* Lớp phủ giúp chữ dễ đọc */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/40 to-black/50" />
 
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          {/* GALLERY TRÁI – mô-đun xếp lớp hiện đại */}
-          <div className="grid grid-cols-6 grid-rows-6 gap-4 lg:order-1">
-            {/* Ảnh lớn chính (cao) */}
-            <figure className="col-span-4 row-span-6 rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-sm">
-              <img
-                src="https://cafefcdn.com/203337114487263232/2023/9/27/17-2299-1695818398972-16958183990901425659148.jpg"
-                alt="Kho bãi & vận chuyển VLXD"
-                className="h-full w-full object-cover"
-              />
-            </figure>
+      <div className="container mx-auto max-w-7xl px-4 py-12 md:py-20 grid gap-10 md:grid-cols-2 items-center">
+        {/* Nội dung bên trái */}
+        <div className="text-white">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1 text-sm bg-white/10 backdrop-blur">
+            <Boxes className="w-4 h-4 text-amber-300"/> Nhà phân phối vật liệu xây dựng
+          </span>
+          <h1 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+            Vật liệu cho mọi công trình • Giao nhanh • Giá rõ ràng
+          </h1>
+          <p className="mt-3 text-white/80 text-base md:text-lg">
+            Phân phối trực tiếp từ kho: xi măng, gạch, thép, ngói… Đồng hành kỹ thuật theo từng hạng mục và tiến độ thi công.
+          </p>
 
-            {/* Ảnh nhỏ 1 */}
-            <figure className="col-span-2 row-span-3 rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-sm">
-              <img
-                src="https://ongvang.vn/thumbnails/posts/large/uploads/2024/09/ngoi-prime-3-1.jpg.webp"
-                alt="Ngói màu công trình"
-                className="h-full w-full object-cover"
-              />
-            </figure>
-
-            {/* Ảnh nhỏ 2 (chồng nhẹ) */}
-            <div className="col-span-2 row-span-3 relative">
-              <div className="absolute -top-3 -right-3 h-full w-full rounded-2xl bg-brand-primary/10 blur-sm" />
-              <figure className="relative rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-sm">
-                <img
-                  src="https://ongvang.vn/uploads/c881b40ebef063b28dfe66277ce037c3.webp"
-                  alt="Gạch ốp lát"
-                  className="h-full w-full object-cover"
-                />
-              </figure>
-            </div>
-
-            {/* Ảnh dài ngang (float) */}
-            <figure className="hidden md:block col-span-6 -mt-6 rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-sm">
-              <img
-                src="https://ongvang.vn/thumbnails/posts/large/uploads/20250917-1028-mau-ngoi-lop-remix-01k5avbazsf4ps542nq0npanpp.jpg.webp"
-                alt="Mẫu vật tư phối cảnh"
-                className="h-48 w-full object-cover"
-              />
-            </figure>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="#catalog" className="px-4 py-2 rounded-lg text-white bg-brand-primary hover:bg-brand-dark text-sm md:text-base">Xem catalog</a>
+            <a href="#contact" className="px-4 py-2 rounded-lg border border-white/30 text-white hover:border-brand-primary hover:text-brand-primary text-sm md:text-base inline-flex items-center gap-2">
+              <Phone className="w-4 h-4"/> Nhận báo giá
+            </a>
           </div>
 
-          {/* TEXT PHẢI – chỉ tiêu đề và mô tả, không nút */}
-          <div
-            className="space-y-6 lg:order-2"
-            data-aos="fade-up"
-            data-aos-duration="900"
-            data-aos-delay="60"
-          >
-            <h1 className="text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl">
-              Vật liệu xây dựng <span className="text-brand-primary">chuẩn công trình</span>, giao nhanh, báo giá minh bạch
-            </h1>
+          {/* Tìm nhanh */}
+          <form className="mt-4 flex items-stretch max-w-xl" action="#catalog" role="search" aria-label="Tìm sản phẩm">
+            <div className="flex-1 inline-flex items-center gap-2 rounded-l-lg border border-white/20 bg-white/90 px-3">
+              <Search className="w-4 h-4 text-brand-ink/60"/>
+              <input
+                className="w-full py-2 outline-none placeholder:text-brand-ink/40 text-sm text-brand-ink bg-transparent"
+                placeholder="Tìm sản phẩm (ví dụ: gạch 60x60, xi măng)"
+                name="q"
+                type="search"
+                autoComplete="off"
+              />
+            </div>
+            <button type="submit" className="px-4 rounded-r-lg bg-brand-primary hover:bg-brand-dark text-white text-sm">Tìm</button>
+          </form>
 
-            <p className="text-base sm:text-lg text-gray-700">
-              Cung ứng gạch, xi măng, ngói màu, thép và phụ kiện lắp đặt từ các thương hiệu uy tín.
-              Tư vấn theo hồ sơ thiết kế để tối ưu khối lượng, chi phí và tiến độ; hồ sơ CO/CQ đầy đủ,
-              đáp ứng yêu cầu nghiệm thu và an toàn thi công.
-            </p>
+          {/* Cam kết nhanh gọn */}
+          <ul className="mt-6 grid grid-cols-2 gap-4 text-sm">
+            <li className="inline-flex items-center gap-2 text-white/90"><ShieldCheck className="w-4 h-4 text-amber-300"/> Hàng chính hãng – bảo hành</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><Truck className="w-4 h-4 text-amber-300"/> Giao nhanh trong 24–48h</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><Clock className="w-4 h-4 text-amber-300"/> Hỗ trợ kỹ thuật kịp thời</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><Boxes className="w-4 h-4 text-amber-300"/> Danh mục đa dạng – luôn sẵn</li>
+          </ul>
 
-            {/* gạch đầu dòng chữ (không nút) */}
-            <ul className="space-y-2 text-sm sm:text-base text-brand-ink/80">
-              <li className="flex items-start gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />
-                Giao nội thành 24–48h, hỗ trợ bốc xếp theo mặt bằng thi công
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />
-                Báo giá theo BOQ, thay thế tương đương khi hết hàng
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />
-                Hỗ trợ lấy mẫu và catalogue cho kiến trúc/supervisor
-              </li>
-            </ul>
+          {/* Số liệu nổi bật */}
+          <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+            <div className="rounded-lg bg-white/10 backdrop-blur border border-white/15 px-4 py-3">
+              <div className="text-2xl font-bold text-white">2k+</div>
+              <div className="text-xs text-white/80">Mã sản phẩm</div>
+            </div>
+            <div className="rounded-lg bg-white/10 backdrop-blur border border-white/15 px-4 py-3">
+              <div className="text-2xl font-bold text-white">20+</div>
+              <div className="text-xs text-white/80">Tỉnh thành phục vụ</div>
+            </div>
+            <div className="rounded-lg bg-white/10 backdrop-blur border border-white/15 px-4 py-3">
+              <div className="text-2xl font-bold text-white">98%</div>
+              <div className="text-xs text-white/80">Khách hàng hài lòng</div>
+            </div>
           </div>
         </div>
+
+        {/* Slider PNG bên phải: hiển thị 1 ảnh/lần + tag minh họa */}
+        <RightImageSlider />
       </div>
     </section>
-  );
+  )
+}
+
+function RightImageSlider() {
+  const images = ["/brickegg.png", "/concreteegg.png", "/roofegg.png"]
+  const [index, setIndex] = useState(0)
+  const prev = () => setIndex((i) => (i - 1 + images.length) % images.length)
+  const next = () => setIndex((i) => (i + 1) % images.length)
+
+  return (
+    <div className="relative rounded-lg overflow-hidden">
+      <div className="relative aspect-[4/3] w-full">
+        {images.map((src, i) => (
+          <div key={src} className="absolute inset-0 transition-opacity duration-700 ease-in-out" style={{ opacity: i === index ? 1 : 0 }}>
+            <img src={src} alt="Sản phẩm" className="w-full h-full object-contain" loading="lazy" decoding="async" />
+          </div>
+        ))}
+      </div>
+      <div className="flex absolute bottom-3 left-1/2 -translate-x-1/2 z-10 space-x-2">
+        {images.map((_, i) => (
+          <button key={i} aria-label="indicator" onClick={() => setIndex(i)} className={`${i===index ? 'bg-white' : 'bg-white/50 hover:bg-white/70'} w-2.5 h-2.5 rounded-full transition`} />
+        ))}
+      </div>
+      <button type="button" onClick={prev} className="flex absolute top-1/2 left-3 -translate-y-1/2 z-10 items-center justify-center w-10 h-10 bg-white/50 rounded-full hover:bg-white/70 focus:outline-none transition" aria-label="Prev">
+        <ChevronLeft className="w-5 h-5 text-gray-700" />
+      </button>
+      <button type="button" onClick={next} className="flex absolute top-1/2 right-3 -translate-y-1/2 z-10 items-center justify-center w-10 h-10 bg-white/50 rounded-full hover:bg-white/70 focus:outline-none transition" aria-label="Next">
+        <ChevronRight className="w-5 h-5 text-gray-700" />
+      </button>
+    </div>
+  )
 }

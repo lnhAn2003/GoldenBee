@@ -9,8 +9,8 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-brand-base text-brand-ink">
             <Header />
-            <AboutUs/>
             <Hero />
+            <AboutUs/>
             <Partners/>
             <Services/>
             <Footer />
