@@ -2,18 +2,7 @@
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-light to-white">
-      {/* pattern nền nhẹ */}
-            <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-brand-primary/10 blur-3xl" />
-        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="dots-hero" width="28" height="28" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="2" fill="currentColor" />
-            </pattern>
-          </defs>
-          <rect width="1440" height="800" fill="url(#dots-hero)" className="text-brand-primary" />
-        </svg>
-      </div>
+      
 
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">

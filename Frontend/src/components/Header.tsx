@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+﻿import { useEffect, useState } from "react"
 import { Menu, X, Search, Home, Package, Building2, Phone, Newspaper, Info } from "lucide-react"
 
 export default function Header() {
@@ -14,17 +14,17 @@ export default function Header() {
 
   return (
     <header className={`border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50 sticky top-0 z-50 ${scrolled ? 'shadow-sm' : ''}`}>
-      <div className="container mx-auto max-w-6xl px-4 h-16 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+      <div className="container mx-auto max-w-1xl px-4 h-16 flex items-center gap-10">
         {/* Logo (left) */}
         <div className="justify-self-start">
           <a href="/" className="inline-flex items-center gap-2">
-            <span className="w-8 h-8 rounded bg-brand-primary inline-block" />
-            <span className="font-semibold">YourCompany</span>
+            <img src="/logo/logoongvang.jpeg" alt="Logo" className="h-15 w-50 object-contain shrink-0" />
+            
           </a>
         </div>
 
         {/* Centered nav */}
-        <nav aria-label="Main" className="hidden md:flex items-center gap-5 text-base justify-self-center">
+        <nav aria-label="Main" className="hidden lg:flex items-center gap-5 text-base mx-auto">
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#home"><Home className="w-4 h-4"/>Trang chủ</a>
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#products"><Package className="w-4 h-4"/>Sản phẩm</a>
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#projects"><Building2 className="w-4 h-4"/>Dự án</a>
@@ -34,8 +34,8 @@ export default function Header() {
         </nav>
 
         {/* Right: Search + mobile toggler */}
-        <div className="justify-self-end flex items-center gap-2">
-          <form role="search" aria-label="Tìm kiếm" action="#search" className="hidden md:flex items-center">
+        <div className="ml-auto flex items-center gap-2">
+          <form role="search" aria-label="Tìm kiếm" action="#search" className="hidden lg:flex items-center">
             <div className="relative">
               <Search className="w-4 h-4 text-brand-ink/50 absolute left-3 top-1/2 -translate-y-1/2"/>
               <input
@@ -50,7 +50,7 @@ export default function Header() {
 
           <button
             onClick={() => setOpen(v => !v)}
-            className="md:hidden p-2 rounded border"
+            className="lg:hidden p-2 rounded border"
             aria-label="Toggle Menu"
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -62,7 +62,7 @@ export default function Header() {
 
       {/* Mobile panel */}
       {open && (
-        <div id="mobile-nav" className="md:hidden border-t bg-white shadow-sm">
+        <div id="mobile-nav" className="lg:hidden border-t bg-white shadow-sm">
           <div className="px-4 py-3">
             <form role="search" aria-label="Tìm kiếm" action="#search" className="flex items-center">
               <div className="relative flex-1">
@@ -90,4 +90,5 @@ export default function Header() {
     </header>
   )
 }
+
 

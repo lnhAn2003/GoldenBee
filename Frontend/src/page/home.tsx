@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+﻿import Header from "../components/Header";
 import Footer from "../components/Footer"
 import Hero from "../components/Hero";
 import Services from "../components/Service";
@@ -13,7 +13,6 @@ export default function Home() {
             <Hero />
             <Partners/>
             <Services/>
-            {/* nội dung */}
             <Footer />
         </div>
     )

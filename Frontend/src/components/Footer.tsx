@@ -1,5 +1,5 @@
 ﻿
-import { Phone, Mail, MapPin, Facebook, Youtube, Store, Globe } from "lucide-react"
+import { Phone, Mail, MapPin, Facebook, Youtube, Store, Globe, ShieldCheck } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -8,8 +8,8 @@ export default function Footer() {
         {/* Brand + contact */}
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-8 h-8 rounded bg-brand-primary inline-block" />
-            <span className="font-semibold">YourCompany</span>
+            <img src="/logo/logoongvang.jpeg" alt="Logo" className="h-9 w-auto object-contain" />
+            
           </div>
           <ul className="space-y-2 text-sm text-white/80">
             <li className="inline-flex items-center gap-2"><Phone className="w-4 h-4"/> 0123 456 789</li>
@@ -24,7 +24,7 @@ export default function Footer() {
             className="mt-3 inline-flex items-center gap-2 text-xs text-white/70 hover:text-white"
             aria-label="Đã thông báo Bộ Công Thương"
           >
-            <span className="inline-block rounded bg-white/10 px-2 py-1">Bộ Công Thương</span>
+            <span className="inline-flex items-center gap-1 rounded bg-white/10 px-2 py-1"><ShieldCheck className="w-3 h-3"/>Bộ Công Thương</span>
             <span>Đã thông báo</span>
           </a>
         </div>
@@ -82,3 +82,6 @@ export default function Footer() {
     </footer>
   )
 }
+
+
+
