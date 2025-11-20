@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Services from "../components/Service";
 import AboutUs from "../components/AboutUs";
 import Partners from "../components/Partners";
+import News from "../components/News";
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <AboutUs/>
             <Partners/>
             <Services/>
+            <News/>
             <Footer />
         </div>
     )
