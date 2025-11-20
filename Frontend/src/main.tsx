@@ -1,11 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-
-import Home from "./page/home"
+// src/main.tsx
+import '@mantine/core/styles.css';
+import { MantineProvider } from '@mantine/core';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import Home from './page/home';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Home></Home>
+    <MantineProvider defaultColorScheme="light">
+      <Home />
+    </MantineProvider>
   </React.StrictMode>
-)
+);

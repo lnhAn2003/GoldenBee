@@ -35,7 +35,9 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="py-12 md:py-16">
+    <section id="services" className="relative isolate py-12 md:py-16">
+      <div className="absolute inset-0 -z-10 bg-[#fff8f8]" />
+      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px)]" />
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-block rounded-full border px-3 py-1 text-sm text-brand-ink/70">Dịch vụ</span>
