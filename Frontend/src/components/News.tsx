@@ -135,9 +135,8 @@ export default function News() {
   }, [])
 
   return (
-    <section id="news" aria-label="Brick updates and projects" className="relative isolate py-12 md:py-16">
-      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px)]" />
-
+    <section id="news" aria-label="Brick updates and projects" className="relative isolate bg-white py-12 md:py-16">
+      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
       <div className="mx-auto max-w-7xl px-4 md:px-6 space-y-6">
         {/* Newsflash ticker - left unchanged */}
         <div className="flex items-center overflow-hidden rounded-full bg-brand-primary text-white shadow">

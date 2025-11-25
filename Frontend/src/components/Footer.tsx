@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Facebook, Youtube, Store, Globe, ShieldCheck } fro
 
 export default function Footer() {
   return (
-    <footer className="mt-12 bg-brand-dark text-white">
+    <footer className="mt-0 bg-brand-dark text-white">
       <div className="container mx-auto max-w-7xl px-4 py-12 grid gap-10 md:grid-cols-4">
         {/* Brand + contact */}
         <div>
@@ -82,6 +82,5 @@ export default function Footer() {
     </footer>
   )
 }
-
 
 
