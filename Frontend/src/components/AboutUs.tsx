@@ -35,10 +35,8 @@ const features = [
 
 export default function AboutUs() {
   return (
-    <section id="about" aria-label="Về chúng tôi" className="relative isolate overflow-hidden py-16 md:py-20">
-      <div className="absolute inset-0 -z-10 bg-[#fff8f8]" />
-      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px)]" />
-
+    <section id="about" aria-label="Về chúng tôi" className="relative isolate bg-white py-16 md:py-20">
+      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="grid items-center gap-10 md:gap-14 lg:grid-cols-[1.05fr_1fr]">
           <div className="order-2 lg:order-1">

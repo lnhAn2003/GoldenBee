@@ -1,4 +1,5 @@
 ﻿import { Truck, ShieldCheck, Wrench, ClipboardList, Phone, Boxes } from "lucide-react"
+import { buttonClass } from "./ui/button"
 
 export default function Services() {
   const services = [
@@ -35,9 +36,8 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="relative isolate py-12 md:py-16">
-      <div className="absolute inset-0 -z-10 bg-[#fff8f8]" />
-      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px)]" />
+    <section id="services" className="relative isolate bg-white py-12 md:py-16">
+      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-block rounded-full border px-3 py-1 text-sm text-brand-ink/70">Dịch vụ</span>
@@ -63,7 +63,7 @@ export default function Services() {
         </div>
 
         <div className="mt-8 text-center">
-          <a href="#contact" className="inline-block px-4 py-2 rounded-lg text-white bg-brand-primary hover:bg-brand-dark text-sm">
+          <a href="#contact" className={buttonClass({ variant: "primary", size: "md" })}>
             Trao đổi nhu cầu của bạn
           </a>
         </div>

@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react"
-import { Menu, X, Search, Home, Package, Building2, Phone, Newspaper, Info, ChevronDown } from "lucide-react"
+import { Menu, X, Search, Home, Package, Building2, Phone, Newspaper, Info, ChevronDown, Paperclip } from "lucide-react"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -24,7 +24,7 @@ export default function Header() {
         </div>
 
         {/* Centered nav */}
-        <nav aria-label="Main" className="hidden lg:flex items-center gap-5 text-base mx-auto">
+        <nav aria-label="Main" className="hidden lg:flex items-center gap-5 text-base mx-auto font-display">
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#home"><Home className="w-4 h-4"/>Trang chủ</a>
 
           <div className="relative group">
@@ -43,6 +43,7 @@ export default function Header() {
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#news"><Newspaper className="w-4 h-4"/>Tin tức</a>
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#about"><Info className="w-4 h-4"/>Giới thiệu</a>
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#contact"><Phone className="w-4 h-4"/>Liên hệ</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#contact"><Paperclip className="w-4 h-4"/>Tài liệu</a>
         </nav>
 
         {/* Right: Search + mobile toggler */}
@@ -51,7 +52,7 @@ export default function Header() {
             <div className="relative">
               <Search className={`w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 ${scrolled ? 'text-brand-ink/60' : 'text-brand-ink/70'}`}/>
               <input
-                className={`w-64 rounded-lg bg-transparent pl-9 pr-3 py-2 text-sm outline-none border ${scrolled ? 'border-black/20 text-brand-ink placeholder:text-brand-ink/50' : 'border-brand-ink/30 text-white placeholder:text-brand-ink/60'}`}
+                className={`w-64 rounded-lg bg-transparent pl-9 pr-3 py-2 text-sm outline-none border ${scrolled ? 'border-black/20 text-brand-ink placeholder:text-brand-ink/50' : 'border-brand-ink/30 text-brand-ink placeholder:text-brand-ink/60'}`}
                 placeholder="Tìm sản phẩm..."
                 name="q"
                 type="search"
@@ -92,7 +93,7 @@ export default function Header() {
               </div>
             </form>
           </div>
-          <nav className="px-4 pb-4 grid gap-2 text-base" aria-label="Mobile">
+          <nav className="px-4 pb-4 grid gap-2 text-base font-display" aria-label="Mobile">
             <a onClick={()=>setOpen(false)} className="inline-flex items-center gap-2 text-brand-ink/80 hover:text-brand-ink" href="#home"><Home className="w-4 h-4"/>Trang chủ</a>
 
             <div>
@@ -125,4 +126,3 @@ export default function Header() {
     </header>
   )
 }
-

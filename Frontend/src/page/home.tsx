@@ -5,13 +5,17 @@ import Services from "../components/Service";
 import AboutUs from "../components/AboutUs";
 import Partners from "../components/Partners";
 import News from "../components/News";
+import Product from "../components/Product";
+import ProductSale from "../components/ProductSale";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-brand-base text-brand-ink">
+        <div className="min-h-screen bg-white text-brand-ink">
             <Header />
             <Hero />
             <AboutUs/>
+            <Product />
+            <ProductSale/>
             <Partners/>
             <Services/>
             <News/>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { buttonClass } from "./ui/button"
 
 type Story = {
   id: string
@@ -10,117 +11,123 @@ type Story = {
   badge?: string
 }
 
+// Tin chính
 const mainStory: Story = {
   id: "m1",
-  title: "Face brick drop for skyline facade mock-up",
-  excerpt: "Siena deep red with dark joint mortar arrives pre-wrapped for rooftop hoist. Two pallets staged for architect review tonight.",
-  category: "Main",
+  title: "Giảm giá gạch ốp mặt tiền cho dự án Skyline",
+  excerpt:
+    "Lô gạch đỏ Sienna kèm keo chít mạch màu tối đã về kho, được đóng pallet sẵn để cẩu lên mái. Hai pallet trưng bày cho kiến trúc sư duyệt tối nay.",
+  category: "Tin chính",
   date: "2025-11-20",
   image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1500&auto=format&fit=crop",
-  badge: "Main Story",
+  badge: "Nổi bật",
 }
 
+// Biên tập chọn
 const editorsPicks: Story[] = [
   {
     id: "e1",
-    title: "Peace-of-mind warranty on pressed brick for coastal builds",
-    excerpt: "Salt-resistant slips and low-porosity bodies tested for waterfront towers.",
-    category: "Editor\'s pick",
+    title: "Bảo hành yên tâm cho gạch ốp khu vực gần biển",
+    excerpt: "Gạch chịu muối, xương đặc thấp hút nước, test thực tế cho công trình mặt tiền sát biển.",
+    category: "Biên tập chọn",
     date: "2025-11-18",
     image: "https://images.unsplash.com/photo-1473181488821-2d23949a045a?q=80&w=800&auto=format&fit=crop",
-    badge: "Spec",
+    badge: "Thông số kỹ thuật",
   },
   {
     id: "e2",
-    title: "Load-out plan keeps cranes moving at riverside townhomes",
-    excerpt: "Six drops over 36 hours with banded packs and slab mats ready for hoist hooks.",
-    category: "Project",
+    title: "Kế hoạch xuất hàng giúp cẩu làm việc liên tục tại khu nhà phố ven sông",
+    excerpt: "Chia 6 đợt giao trong 36 giờ, pallet được buộc dây, lót ván sẵn cho móc cẩu, không làm gián đoạn thi công.",
+    category: "Tổ chức thi công",
     date: "2025-11-16",
     image: "https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=800&auto=format&fit=crop",
-    badge: "Logistics",
+    badge: "Logistics công trường",
   },
 ]
 
+// Đang quan tâm
 const trending: Story[] = [
   {
     id: "t1",
-    title: "Graphite brick run is back with matching dark mortar",
-    excerpt: "New batch ready with plastic-wrapped pallets to prevent staining in transit.",
-    category: "Trending",
+    title: "Gạch xám than về lại kho, kèm keo chít mạch tối đồng bộ",
+    excerpt: "Hàng mới đã quấn màng PE chống bẩn, sẵn sàng giao cho các dự án mặt tiền hiện đại.",
+    category: "Đang quan tâm",
     date: "2025-11-15",
     image: "https://images.unsplash.com/photo-1529429617124-aee7fc9c5c1c?q=80&w=800&auto=format&fit=crop",
-    badge: "Trending",
+    badge: "Xu hướng",
   },
   {
     id: "t2",
-    title: "Crew favorites: smooth utility blocks for fast layout",
-    excerpt: "Clean arrises and tight tolerances speed up courses for interior partitions.",
-    category: "Trending",
+    title: "Gạch block kích thước lớn – lựa chọn ưa thích của đội thi công",
+    excerpt: "Mặt gạch phẳng, sai số nhỏ giúp đi hàng nhanh, phù hợp tường ngăn nội thất.",
+    category: "Đang quan tâm",
     date: "2025-11-14",
     image: "https://images.unsplash.com/photo-1600460759920-9fe5c0b1c1ad?q=80&w=800&auto=format&fit=crop",
-    badge: "Trending",
+    badge: "Gợi ý thi công",
   },
   {
     id: "t3",
-    title: "Watch: mortar color match demo on a cloudy day",
-    excerpt: "Field techs show pigment adjustments to keep joints even when humidity spikes.",
-    category: "Trending",
+    title: "Video: Pha màu vữa chít mạch chuẩn mẫu khi trời âm u",
+    excerpt: "Kỹ thuật viên hướng dẫn chỉnh tỉ lệ màu để mạch gạch đều tông dù độ ẩm thay đổi.",
+    category: "Đang quan tâm",
     date: "2025-11-12",
     image: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop",
-    badge: "Watch",
+    badge: "Video hướng dẫn",
   },
 ]
 
+// Phổ biến
 const popular: Story[] = [
   {
     id: "p1",
-    title: "Ways to stage pallets when space is tight",
-    excerpt: "How to keep face brick clean with tarp tunnels and drip trays on narrow sites.",
-    category: "Popular",
+    title: "Cách bố trí pallet khi mặt bằng chật",
+    excerpt: "Giữ gạch mặt tiền luôn sạch với đường hầm bạt và khay hứng nước trên công trình hẻm nhỏ.",
+    category: "Phổ biến",
     date: "2025-11-10",
     image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=800&auto=format&fit=crop",
-    badge: "Guide",
+    badge: "Hướng dẫn",
   },
   {
     id: "p2",
-    title: "Step-by-step flight-ready pallet prep",
-    excerpt: "Strapping, corner guards, and shrink wrap that survive the airport tarmac to island projects.",
-    category: "Popular",
+    title: "Chuẩn bị pallet giao thẳng lên tầng: từng bước chi tiết",
+    excerpt: "Dây đai, bo góc, màng co… đảm bảo pallet chịu được nắng mưa khi trung chuyển nhiều chặng.",
+    category: "Phổ biến",
     date: "2025-11-09",
     image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=800&auto=format&fit=crop",
-    badge: "Logistics",
+    badge: "Quy trình giao nhận",
   },
   {
     id: "p3",
-    title: "Track-ready delivery for motorsport pits",
-    excerpt: "Block, mortar, and pavers sequenced by bay so crews pour, lay, and grout without waiting.",
-    category: "Popular",
+    title: "Giải pháp giao hàng cho khu paddock đường đua mô tô",
+    excerpt: "Gạch block, vữa và gạch lát được sắp theo từng ô pit, thi công liên tục không chờ hàng.",
+    category: "Phổ biến",
     date: "2025-11-08",
     image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
     badge: "Case study",
   },
   {
     id: "p4",
-    title: "Stadium-grade drainage and paver stacks",
-    excerpt: "Pre-matched pavers and drainage kits staged by gate for overnight installs.",
-    category: "Popular",
+    title: "Thoát nước sân vận động và xếp chồng gạch lát chuẩn kỹ thuật",
+    excerpt: "Gạch lát và bộ phụ kiện thoát nước được đánh dấu theo từng cổng, lắp đặt qua đêm kịp bàn giao.",
+    category: "Phổ biến",
     date: "2025-11-07",
     image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop",
-    badge: "Playbook",
+    badge: "Sổ tay thi công",
   },
 ]
 
+// Tin chạy chữ
 const tickerItems = [
-  "Flash deal: Siena face brick bundles minus $45 per thousand until Friday.",
-  "Night delivery slots open for District 1 and Thu Duc on 11/22.",
-  "Graphite series back in stock with matching dark joint mortar.",
-  "Free sample wall panels for architects through December.",
+  "Flash sale: gạch ốp mặt tiền Siena giảm 45.000đ/m² đến hết thứ Sáu.",
+  "Mở thêm khung giờ giao ban đêm cho Quận 1 và TP Thủ Đức ngày 22/11.",
+  "Dòng gạch xám than đã có lại, kèm keo chít mạch đồng màu.",
+  "Tặng mẫu mảng tường trưng bày cho kiến trúc sư đến hết tháng 12.",
 ]
 
 function formatDate(s: string) {
   try {
     const d = new Date(s)
-    return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" })
+    return d.toLocaleDateString("vi-VN", { year: "numeric", month: "short", day: "2-digit" })
   } catch {
     return s
   }
@@ -135,15 +142,20 @@ export default function News() {
   }, [])
 
   return (
-    <section id="news" aria-label="Brick updates and projects" className="relative isolate py-12 md:py-16">
-      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(15,23,42,0.04)_32px)]" />
-
+    <section
+      id="news"
+      aria-label="Tin tức và dự án vật liệu xây dựng"
+      className="relative isolate bg-white py-12 md:py-16"
+    >
+      <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
       <div className="mx-auto max-w-7xl px-4 md:px-6 space-y-6">
-        {/* Newsflash ticker - left unchanged */}
+        {/* Ticker tin nhanh */}
         <div className="flex items-center overflow-hidden rounded-full bg-brand-primary text-white shadow">
           <div className="flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wide">
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/15 text-[10px] leading-none">*</span>
-            Newsflash
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/15 text-[10px] leading-none">
+              *
+            </span>
+            Tin nhanh
           </div>
           <div className="relative flex-1 h-10">
             {tickerItems.map((item, i) => (
@@ -163,17 +175,17 @@ export default function News() {
 
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-primary">GoldenBee Brick Supply</p>
-            <h2 className="text-3xl font-bold text-brand-ink md:text-4xl">Main stories & picks</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-primary">
+              Ong Vàng Vật Liệu Xây Dựng
+            </p>
+            <h2 className="text-3xl font-bold text-brand-ink md:text-4xl">Tin chính & gợi ý cho bạn</h2>
           </div>
-          <a
-            href="#catalog"
-            className="inline-flex items-center rounded-full border border-brand-primary/20 bg-white px-4 py-2 text-sm font-semibold text-brand-primary shadow-sm transition hover:-translate-y-0.5 hover:shadow"
-          >
-            View catalog
+          <a href="#catalog" className={buttonClass({ variant: "secondary", size: "md" })}>
+            Xem danh mục sản phẩm
           </a>
         </div>
 
+        {/* Tin chính + gợi ý */}
         <div className="grid gap-6 lg:grid-cols-12">
           <article className="lg:col-span-7 overflow-hidden rounded-2xl border border-black/5 bg-white shadow-md">
             <div className="relative aspect-[16/9] w-full overflow-hidden">
@@ -186,7 +198,7 @@ export default function News() {
                 </div>
                 <h3 className="text-2xl font-bold leading-snug md:text-3xl">{mainStory.title}</h3>
                 <p className="max-w-3xl text-sm text-white/90 md:text-base">{mainStory.excerpt}</p>
-                <div className="text-xs text-white/80">Updated {formatDate(mainStory.date)}</div>
+                <div className="text-xs text-white/80">Cập nhật {formatDate(mainStory.date)}</div>
               </div>
             </div>
           </article>
@@ -205,17 +217,15 @@ export default function News() {
           </div>
         </div>
 
+        {/* Tin phổ biến */}
         <div className="space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">Popular Stories</p>
-              <h3 className="text-xl font-bold text-brand-ink">What teams are clicking right now</h3>
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">Tin được quan tâm</p>
+              <h3 className="text-xl font-bold text-brand-ink">Nhà thầu đang xem nhiều</h3>
             </div>
-            <a
-              href="#news/all"
-              className="inline-flex items-center rounded-lg border border-brand-primary/20 bg-white px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-light"
-            >
-              Browse all
+            <a href="#news/all" className={buttonClass({ variant: "secondary", size: "md" })}>
+              Xem tất cả tin
             </a>
           </div>
           <div className="grid gap-4 md:grid-cols-4">
@@ -256,7 +266,12 @@ function SmallCard({ story, accent = "red" }: CardProps & { accent?: "red" | "am
 function TinyCard({ story }: CardProps) {
   return (
     <article className="group relative overflow-hidden rounded-xl border border-black/5 bg-white shadow-sm">
-      <img src={story.image} alt={story.title} className="h-32 w-full object-cover transition duration-200 group-hover:scale-105" loading="lazy" />
+      <img
+        src={story.image}
+        alt={story.title}
+        className="h-32 w-full object-cover transition duration-200 group-hover:scale-105"
+        loading="lazy"
+      />
       <div className="absolute left-2 top-2 rounded-full bg-brand-primary px-2 py-1 text-[10px] font-semibold uppercase text-white">
         {story.badge || story.category}
       </div>

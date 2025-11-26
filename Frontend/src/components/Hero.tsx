@@ -1,5 +1,6 @@
-﻿import { useState } from "react"
+import { useState } from "react"
 import { Truck, ShieldCheck, Clock, Phone, Boxes, Search, ChevronLeft, ChevronRight } from "lucide-react"
+import { buttonClass } from "./ui/button"
 
 export default function Hero() {
   return (
@@ -31,9 +32,16 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#catalog" className="px-4 py-2 rounded-lg text-white bg-brand-primary hover:bg-brand-dark text-sm md:text-base">Xem catalog</a>
-            <a href="#contact" className="px-4 py-2 rounded-lg border border-white/30 text-white hover:border-brand-primary hover:text-brand-primary text-sm md:text-base inline-flex items-center gap-2">
-              <Phone className="w-4 h-4"/> Nhận báo giá
+            <a href="#catalog" className={buttonClass({ variant: "primary", size: "lg" })}>Xem catalog</a>
+            <a
+              href="#contact"
+              className={buttonClass({
+                variant: "secondary",
+                size: "lg",
+                className: "inline-flex items-center gap-2 bg-white/90"
+              })}
+            >
+              <Phone className="w-4 h-4" /> Nhận báo giá
             </a>
           </div>
 
@@ -49,7 +57,7 @@ export default function Hero() {
                 autoComplete="off"
               />
             </div>
-            <button type="submit" className="px-4 rounded-r-lg bg-brand-primary hover:bg-brand-dark text-white text-sm">Tìm</button>
+            <button type="submit" className={buttonClass({ variant: "primary", size: "md", className: "rounded-l-none rounded-r-lg px-5" })}>Tìm</button>
           </form>
 
           {/* Cam kết nhanh gọn */}
