@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react"
 import { Warehouse, Layers } from "lucide-react"
+import { buttonClass } from "./ui/button"
 
 type ProductCard = {
   id: string
@@ -122,9 +123,7 @@ export default function Product() {
               <Warehouse className="h-5 w-5 text-brand-primary" />
               <div className="text-sm font-semibold">3 kho chính</div>
             </div>
-            <button className="ml-3 rounded-full bg-brand-primary px-2.5 py-1 text-[10px] font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-dark">
-              Xem thêm hàng hóa
-            </button>
+            <button className={buttonClass({ variant: "primary", size: "sm", className: "ml-3" })}>Xem thêm hàng hóa</button>
             <select
               value={khoFilter}
               onChange={(e) => setKhoFilter(e.target.value)}
@@ -168,9 +167,7 @@ export default function Product() {
                   <span>{product.warehouse}</span>
                 </div>
                 <div className="mt-auto flex items-center justify-end">
-                  <button className="rounded-full bg-brand-light px-2 py-0.5 text-[5px] font-semibold text-brand-dark shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-primary hover:text-white">
-                    Xem chi tiết
-                  </button>
+                  <button className={buttonClass({ variant: "secondary", size: "sm" })}>Xem chi tiết</button>
                 </div>
               </div>
             </article>

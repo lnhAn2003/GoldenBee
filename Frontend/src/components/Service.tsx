@@ -1,4 +1,5 @@
 ﻿import { Truck, ShieldCheck, Wrench, ClipboardList, Phone, Boxes } from "lucide-react"
+import { buttonClass } from "./ui/button"
 
 export default function Services() {
   const services = [
@@ -62,7 +63,7 @@ export default function Services() {
         </div>
 
         <div className="mt-8 text-center">
-          <a href="#contact" className="inline-block px-4 py-2 rounded-lg text-white bg-brand-primary hover:bg-brand-dark text-sm">
+          <a href="#contact" className={buttonClass({ variant: "primary", size: "md" })}>
             Trao đổi nhu cầu của bạn
           </a>
         </div>

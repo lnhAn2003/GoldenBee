@@ -1,4 +1,5 @@
 import { Layers, Percent, Warehouse } from "lucide-react"
+import { buttonClass } from "./ui/button"
 
 type ProductSaleCard = {
   id: string
@@ -131,9 +132,7 @@ export default function ProductSale() {
                     <span>{product.warehouse}</span>
                   </div>
                   <div className="mt-auto flex items-center justify-end">
-                    <button className="rounded-full bg-brand-light px-2 py-0.5 text-[11px] font-semibold text-brand-dark shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-primary hover:text-white">
-                      Xem chi tiết
-                    </button>
+                    <button className={buttonClass({ variant: "secondary", size: "sm" })}>Xem chi tiết</button>
                   </div>
                 </div>
               </article>

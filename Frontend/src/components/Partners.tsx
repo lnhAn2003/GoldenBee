@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react"
+import { buttonClass } from "./ui/button"
 
 type Partner = {
   name: string
@@ -144,11 +145,11 @@ export default function Partners({ title = "Mạng lưới đối tác" }: { tit
                   key={filter.value}
                   type="button"
                   onClick={() => setTierFilter(filter.value)}
-                  className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    isActive
-                      ? "bg-brand-primary text-white shadow-md"
-                      : "bg-brand-light text-brand-dark ring-1 ring-brand-primary/10 hover:bg-brand-light/80"
-                  }`}
+                  className={buttonClass({
+                    variant: isActive ? "primary" : "light",
+                    size: "md",
+                    className: isActive ? "shadow-md" : "ring-1 ring-brand-primary/10"
+                  })}
                 >
                   <span>{filter.label}</span>
                   <span
