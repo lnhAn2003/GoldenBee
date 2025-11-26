@@ -24,7 +24,7 @@ export default function Header() {
         </div>
 
         {/* Centered nav */}
-        <nav aria-label="Main" className="hidden lg:flex items-center gap-5 text-base mx-auto">
+        <nav aria-label="Main" className="hidden lg:flex items-center gap-5 text-base mx-auto font-display">
           <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#home"><Home className="w-4 h-4"/>Trang chủ</a>
 
           <div className="relative group">
@@ -93,7 +93,7 @@ export default function Header() {
               </div>
             </form>
           </div>
-          <nav className="px-4 pb-4 grid gap-2 text-base" aria-label="Mobile">
+          <nav className="px-4 pb-4 grid gap-2 text-base font-display" aria-label="Mobile">
             <a onClick={()=>setOpen(false)} className="inline-flex items-center gap-2 text-brand-ink/80 hover:text-brand-ink" href="#home"><Home className="w-4 h-4"/>Trang chủ</a>
 
             <div>
@@ -126,4 +126,3 @@ export default function Header() {
     </header>
   )
 }
-

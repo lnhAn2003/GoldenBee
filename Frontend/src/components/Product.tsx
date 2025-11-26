@@ -117,7 +117,7 @@ export default function Product() {
             <h2 className="text-3xl font-bold text-brand-ink">Sản phẩm & kho hàng</h2>
             <p className="text-sm text-brand-ink/70">Hiển thị Tên hàng, Tồn kho, Hình ảnh và kho lưu trữ.</p>
           </div>
-          <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-brand-base px-4 py-3 ring-1 ring-brand-primary/10">
+          <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-white px-4 py-3 ring-1 ring-brand-primary/10">
             <div className="flex items-center gap-2 text-brand-ink">
               <Warehouse className="h-5 w-5 text-brand-primary" />
               <div className="text-sm font-semibold">3 kho chính</div>
