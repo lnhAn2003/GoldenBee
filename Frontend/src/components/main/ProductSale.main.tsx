@@ -1,9 +1,9 @@
 import { Layers, Percent, Warehouse } from "lucide-react"
-import { buttonClass } from "./ui/button"
-import { SectionHeader } from "./ui/section-header"
-import { Card } from "./ui/card"
-import { Badge } from "./ui/badge"
-import { saleProducts } from "../mocks/productsale"
+import { buttonClass } from "../ui/button.ui"
+import { SectionHeader } from "../ui/section-header.ui"
+import { Card } from "../ui/card.ui"
+import { Badge } from "../ui/badge.ui"
+import { saleProducts } from "../../mocks/productsale"
 
 export default function ProductSale() {
   const filteredProducts = saleProducts

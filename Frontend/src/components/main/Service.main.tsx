@@ -1,6 +1,6 @@
 ﻿import { Truck, ShieldCheck, Wrench, ClipboardList, Phone, Boxes } from "lucide-react"
-import { SectionHeader } from "./ui/section-header"
-import { Card } from "./ui/card"
+import { SectionHeader } from "../ui/section-header.ui"
+import { Card } from "../ui/card.ui"
 
 export default function Services() {
   const services = [

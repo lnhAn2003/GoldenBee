@@ -1,5 +1,5 @@
 import { Layers, Plus } from "lucide-react"
-import { catalogItems } from "../mocks/catalog"
+import { catalogItems } from "../../mocks/catalog"
 
 export default function Catalog() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Truck, ShieldCheck, Clock, Phone, Boxes, Search, ChevronLeft, ChevronRight } from "lucide-react"
-import { buttonClass } from "./ui/button"
+import { buttonClass } from "../ui/button.ui"
 
 export default function Hero() {
   return (

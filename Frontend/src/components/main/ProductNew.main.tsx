@@ -1,9 +1,9 @@
 import { Layers, Sparkles, Warehouse } from "lucide-react"
-import { buttonClass } from "./ui/button"
-import { Card } from "./ui/card"
-import { Badge } from "./ui/badge"
-import { SectionHeader } from "./ui/section-header"
-import { newProducts } from "../mocks/productnew"
+import { buttonClass } from "../ui/button.ui"
+import { Card } from "../ui/card.ui"
+import { Badge } from "../ui/badge.ui"
+import { SectionHeader } from "../ui/section-header.ui"
+import { newProducts } from "../../mocks/productnew"
 
 export default function ProductNew() {
   const filteredProducts = newProducts

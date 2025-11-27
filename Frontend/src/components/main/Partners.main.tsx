@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react"
-import { buttonClass } from "./ui/button"
-import type { Partner } from "../mocks/partner"
-import { partners } from "../mocks/partner"
+import { buttonClass } from "../ui/button.ui"
+import type { Partner } from "../../mocks/partner"
+import { partners } from "../../mocks/partner"
 
 
 type TierFilter = "all" | Partner["tier"]

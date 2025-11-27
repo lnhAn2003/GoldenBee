@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes } from "react"
 import { twMerge } from "tailwind-merge"
-import { buttonClass } from "./button"
+import { buttonClass } from "./button.ui"
 
 type FilterChipProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   active?: boolean
