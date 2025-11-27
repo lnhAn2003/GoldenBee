@@ -1,72 +1,9 @@
 import { Layers, Percent, Warehouse } from "lucide-react"
 import { buttonClass } from "./ui/button"
-
-type ProductSaleCard = {
-  id: string
-  name: string
-  stock: string
-  discount: number
-  warehouse: string
-  image: string
-}
-
-// 4 ảnh gạch có sẵn
-const productImages = ["/gạch_1.jpg", "/gạch_2.jpg", "/gạch_3.jpg", "/gạch_4.jpg"]
-
-// Dữ liệu gốc (không có image)
-const baseProducts: Omit<ProductSaleCard, "image">[] = [
-  {
-    id: "sale-gm0001",
-    name: "Gạch KIM PHONG ĐÁ 40x40 GM0001",
-    stock: "940,04",
-    discount: 13,
-    warehouse: "Kho Hậu Văn Long"
-  },
-  {
-    id: "sale-tsl-m006",
-    name: "Gương soi đèn LED TUSLO M006",
-    stock: "512,30",
-    discount: 21,
-    warehouse: "Kho Hậu Giang"
-  },
-  {
-    id: "sale-sen304",
-    name: "Sen cây TUSLO Inox 304 Luxury",
-    stock: "184,90",
-    discount: 15,
-    warehouse: "Kho An Dương Vương"
-  },
-  {
-    id: "sale-op-van-da",
-    name: "Tấm ốp vân đá 600x1200",
-    stock: "245,50",
-    discount: 20,
-    warehouse: "Kho Hậu Giang"
-  },
-  {
-    id: "sale-heater-20l",
-    name: "Máy nước nóng 20L - Smart",
-    stock: "301,22",
-    discount: 14,
-    warehouse: "Kho Hậu Văn Long"
-  },
-  {
-    id: "sale-lavabo-goc",
-    name: "Lavabo đặt góc Smart 900mm",
-    stock: "126,75",
-    discount: 16,
-    warehouse: "Kho Hậu Văn Long"
-  }
-]
-
-// Gán ảnh “ngẫu nhiên” theo index (không cần trùng thứ tự)
-const saleProducts: ProductSaleCard[] = baseProducts.map((product, index) => {
-  const imgIndex = (index * 7 + 3) % productImages.length
-  return {
-    ...product,
-    image: productImages[imgIndex]
-  }
-})
+import { SectionHeader } from "./ui/section-header"
+import { Card } from "./ui/card"
+import { Badge } from "./ui/badge"
+import { saleProducts } from "../mocks/productsale"
 
 export default function ProductSale() {
   const filteredProducts = saleProducts
@@ -79,27 +16,25 @@ export default function ProductSale() {
     >
       <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
       <div className="container mx-auto max-w-6xl px-4">
-        <header className="flex flex-wrap items-center justify-between gap-4">
-          <div className="space-y-3">
-            <span className="inline-flex items-center rounded-full border border-brand-primary/30 bg-brand-light/70 px-4 py-2 text-sm font-semibold text-brand-primary shadow-sm">
-              Hàng giảm giá
-            </span>
-            <h2 className="text-3xl font-bold text-brand-ink">Sản phẩm ưu đãi</h2>
-            <p className="text-sm text-brand-ink/70">
-              Giá đã bao gồm khuyến mãi. Chọn kho để xem hàng còn sẵn.
-            </p>
-          </div>
-          <span className="rounded-full bg-brand-light px-3 py-1 text-[11px] font-semibold text-brand-dark shadow-sm">
-            {filteredProducts.length} sản phẩm
-          </span>
-        </header>
+        <SectionHeader
+          eyebrow="Hàng giảm giá"
+          title="Sản phẩm ưu đãi"
+          description="Giá đã bao gồm khuyến mãi. Chọn kho để xem hàng còn sẵn."
+          align="left"
+          side={
+            <Badge variant="soft" className="shadow-sm">
+              {filteredProducts.length} sản phẩm
+            </Badge>
+          }
+        />
 
         <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           {filteredProducts.map((product) => {
             return (
-              <article
+              <Card
                 key={product.id}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-base bg-white shadow-sm ring-1 ring-brand-primary/5 transition hover:-translate-y-1 hover:shadow-lg"
+                as="article"
+                className="group relative flex h-full flex-col overflow-hidden"
               >
                 <div className="relative aspect-square w-full overflow-hidden">
                   <img
@@ -132,10 +67,17 @@ export default function ProductSale() {
                     <span>{product.warehouse}</span>
                   </div>
                   <div className="mt-auto flex items-center justify-end">
-                    <button className={buttonClass({ variant: "secondary", size: "sm" })}>Xem chi tiết</button>
+                    <button
+                      className={buttonClass({
+                        variant: "secondary",
+                        size: "sm"
+                      })}
+                    >
+                      Xem chi tiết
+                    </button>
                   </div>
                 </div>
-              </article>
+              </Card>
             )
           })}
         </div>
