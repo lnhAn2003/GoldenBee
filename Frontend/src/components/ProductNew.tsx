@@ -1,80 +1,70 @@
-import { Layers, Percent, Warehouse } from "lucide-react"
+import { Layers, Sparkles, Warehouse } from "lucide-react"
 import { buttonClass } from "./ui/button"
 
-type ProductSaleCard = {
+type ProductNewCard = {
   id: string
   name: string
   stock: string
-  discount: number
   warehouse: string
   image: string
 }
 
-// 4 ảnh gạch có sẵn
 const productImages = ["/gạch_1.jpg", "/gạch_2.jpg", "/gạch_3.jpg", "/gạch_4.jpg"]
 
-// Dữ liệu gốc (không có image)
-const baseProducts: Omit<ProductSaleCard, "image">[] = [
+const baseProducts: Omit<ProductNewCard, "image">[] = [
   {
-    id: "sale-gm0001",
-    name: "Gạch KIM PHONG ĐÁ 40x40 GM0001",
-    stock: "940,04",
-    discount: 13,
+    id: "new-terrazzo-60",
+    name: "Gạch terrazzo khổ lớn 60x60 Urban Light",
+    stock: "402,50",
     warehouse: "Kho Hậu Văn Long"
   },
   {
-    id: "sale-tsl-m006",
-    name: "Gương soi đèn LED TUSLO M006",
-    stock: "512,30",
-    discount: 21,
+    id: "new-smartwash-r02",
+    name: "Bồn cầu thông minh SmartWash R02",
+    stock: "275,30",
     warehouse: "Kho Hậu Giang"
   },
   {
-    id: "sale-sen304",
-    name: "Sen cây TUSLO Inox 304 Luxury",
-    stock: "184,90",
-    discount: 15,
+    id: "new-faucet-halo",
+    name: "Bộ vòi lavabo Inox 304 Halo",
+    stock: "198,40",
     warehouse: "Kho An Dương Vương"
   },
   {
-    id: "sale-op-van-da",
-    name: "Tấm ốp vân đá 600x1200",
-    stock: "245,50",
-    discount: 20,
+    id: "new-op-nano-go",
+    name: "Tấm ốp nano họa tiết gỗ 300x600",
+    stock: "325,10",
     warehouse: "Kho Hậu Giang"
   },
   {
-    id: "sale-heater-20l",
-    name: "Máy nước nóng 20L - Smart",
-    stock: "301,22",
-    discount: 14,
+    id: "new-hex-frost",
+    name: "Gạch lục giác Mosaic Frost",
+    stock: "143,75",
     warehouse: "Kho Hậu Văn Long"
   },
   {
-    id: "sale-lavabo-goc",
-    name: "Lavabo đặt góc Smart 900mm",
-    stock: "126,75",
-    discount: 16,
+    id: "new-mirror-aura",
+    name: "Gương tròn viền nhôm đèn LED Aura",
+    stock: "264,90",
     warehouse: "Kho Hậu Văn Long"
   }
 ]
 
-// Gán ảnh “ngẫu nhiên” theo index (không cần trùng thứ tự)
-const saleProducts: ProductSaleCard[] = baseProducts.map((product, index) => {
-  const imgIndex = (index * 7 + 3) % productImages.length
+const newProducts: ProductNewCard[] = baseProducts.map((product, index) => {
+  const imgIndex = (index * 5 + 1) % productImages.length
   return {
     ...product,
     image: productImages[imgIndex]
   }
 })
 
-export default function ProductSale() {
-  const filteredProducts = saleProducts
+export default function ProductNew() {
+  const filteredProducts = newProducts
 
   return (
     <section
-      id="product-sale"
-      aria-label="Sản phẩm đang giảm giá"
+      id="product-new"
+      aria-label="Sản phẩm mới"
       className="relative isolate bg-white pb-5"
     >
       <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
@@ -82,11 +72,11 @@ export default function ProductSale() {
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-3">
             <span className="inline-flex items-center rounded-full border border-brand-primary/30 bg-brand-light/70 px-4 py-2 text-sm font-semibold text-brand-primary shadow-sm">
-              Hàng giảm giá
+              Hàng mới
             </span>
-            <h2 className="text-3xl font-bold text-brand-ink">Sản phẩm ưu đãi</h2>
+            <h2 className="text-3xl font-bold text-brand-ink">Sản phẩm mới</h2>
             <p className="text-sm text-brand-ink/70">
-              Giá đã bao gồm khuyến mãi. Chọn kho để xem hàng còn sẵn.
+              Danh mục hàng mới nhập kho. Chọn kho để xem hàng còn sẵn.
             </p>
           </div>
           <span className="rounded-full bg-brand-light px-3 py-1 text-[11px] font-semibold text-brand-dark shadow-sm">
@@ -110,8 +100,8 @@ export default function ProductSale() {
                     className="h-full w-full object-contain p-1 transition duration-500"
                   />
                   <div className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-brand-primary px-2.5 py-1 text-[10px] font-semibold text-white shadow-sm">
-                    <Percent className="h-3 w-3" />
-                    -{product.discount}%
+                    <Sparkles className="h-3 w-3" />
+                    Mới
                   </div>
                 </div>
 
@@ -121,9 +111,7 @@ export default function ProductSale() {
                   </h3>
                   <div className="flex items-center gap-2 text-xs text-brand-ink/80">
                     <Layers className="h-4 w-4 text-brand-primary" />
-                    <span className="font-semibold text-brand-primary">
-                      Tồn kho:
-                    </span>
+                    <span className="font-semibold text-brand-primary">Tồn kho:</span>
                     <span>{product.stock}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-brand-ink/80">
@@ -132,7 +120,9 @@ export default function ProductSale() {
                     <span>{product.warehouse}</span>
                   </div>
                   <div className="mt-auto flex items-center justify-end">
-                    <button className={buttonClass({ variant: "secondary", size: "sm" })}>Xem chi tiết</button>
+                    <button className={buttonClass({ variant: "secondary", size: "sm" })}>
+                      Xem chi tiết
+                    </button>
                   </div>
                 </div>
               </article>

@@ -107,7 +107,7 @@ export default function Product() {
   )
 
   return (
-    <section id="product" aria-label="Danh sách hàng" className="relative isolate bg-white py-14">
+    <section id="product" aria-label="Danh sách hàng" className="relative isolate bg-white pt-4 pb-5">
       <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(90deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px),repeating-linear-gradient(0deg,transparent,transparent_31px,rgba(31,41,55,0.04)_32px)]" />
       <div className="container mx-auto max-w-6xl px-4">
         <div className="flex flex-wrap items-center justify-between gap-4">

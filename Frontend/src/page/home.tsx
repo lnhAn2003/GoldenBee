@@ -7,6 +7,8 @@ import Partners from "../components/Partners";
 import News from "../components/News";
 import Product from "../components/Product";
 import ProductSale from "../components/ProductSale";
+import ProductNew from "../components/ProductNew";
+import Catalog from "../components/Catalog";
 
 export default function Home() {
     return (
@@ -14,7 +16,9 @@ export default function Home() {
             <Header />
             <Hero />
             <AboutUs/>
+            <Catalog/>
             <Product />
+            <ProductNew />
             <ProductSale/>
             <Partners/>
             <Services/>

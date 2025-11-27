@@ -22,7 +22,7 @@ export default function Hero() {
         {/* Nội dung bên trái */}
         <div className="text-white">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1 text-sm bg-white/10 backdrop-blur">
-            <Boxes className="w-4 h-4 text-amber-300"/> Nhà phân phối vật liệu xây dựng
+            <Boxes className="w-4 h-4 text-white-500"/> Nhà phân phối vật liệu xây dựng
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
             Vật liệu cho mọi công trình • Giao nhanh • Giá rõ ràng
@@ -62,10 +62,10 @@ export default function Hero() {
 
           {/* Cam kết nhanh gọn */}
           <ul className="mt-6 grid grid-cols-2 gap-4 text-sm">
-            <li className="inline-flex items-center gap-2 text-white/90"><ShieldCheck className="w-4 h-4 text-amber-300"/> Hàng chính hãng – bảo hành</li>
-            <li className="inline-flex items-center gap-2 text-white/90"><Truck className="w-4 h-4 text-amber-300"/> Giao nhanh trong 24–48h</li>
-            <li className="inline-flex items-center gap-2 text-white/90"><Clock className="w-4 h-4 text-amber-300"/> Hỗ trợ kỹ thuật kịp thời</li>
-            <li className="inline-flex items-center gap-2 text-white/90"><Boxes className="w-4 h-4 text-amber-300"/> Danh mục đa dạng – luôn sẵn</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><ShieldCheck className="w-4 h-4 text-white-500"/> Hàng chính hãng – bảo hành</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><Truck className="w-4 h-4 text-white-500"/> Giao nhanh trong 24–48h</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><Clock className="w-4 h-4 text-white-500"/> Hỗ trợ kỹ thuật kịp thời</li>
+            <li className="inline-flex items-center gap-2 text-white/90"><Boxes className="w-4 h-4 text-white-500"/> Danh mục đa dạng – luôn sẵn</li>
           </ul>
 
           {/* Số liệu nổi bật */}
