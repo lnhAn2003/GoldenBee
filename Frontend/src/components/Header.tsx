@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react"
-import { Menu, X, Search, Home, Package, Building2, Phone, Newspaper, Info, ChevronDown, Paperclip } from "lucide-react"
+import { Menu, X, Search, Home, Package, Building2, Phone, Newspaper, Info, ChevronDown, Paperclip, Box, Link } from "lucide-react"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -25,25 +25,13 @@ export default function Header() {
 
         {/* Centered nav */}
         <nav aria-label="Main" className="hidden lg:flex items-center gap-5 text-base mx-auto font-display">
-          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#home"><Home className="w-4 h-4"/>Trang chủ</a>
-
-          <div className="relative group">
-            <button
-              type="button"
-              className="relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition"
-              aria-haspopup="menu"
-              aria-expanded="false"
-            >
-              <Package className="w-4 h-4"/>
-              Sản phẩm
-            </button>
-          </div>
-
-          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#projects"><Building2 className="w-4 h-4"/>Dự án</a>
-          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#news"><Newspaper className="w-4 h-4"/>Tin tức</a>
-          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#about"><Info className="w-4 h-4"/>Giới thiệu</a>
-          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#contact"><Phone className="w-4 h-4"/>Liên hệ</a>
-          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="#contact"><Paperclip className="w-4 h-4"/>Tài liệu</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/"><Home className="w-4 h-4"/>Trang chủ</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/products"><Box className="w-4 h-4"/>Sản phẩm</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/projects"><Building2 className="w-4 h-4"/>Dự án</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/news"><Newspaper className="w-4 h-4"/>Tin tức</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/aboutus"><Info className="w-4 h-4"/>Giới thiệu</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/contact"><Phone className="w-4 h-4"/>Liên hệ</a>
+          <a className="group relative inline-flex items-center gap-2 text-brand-ink/70 hover:text-brand-ink transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand-primary group-hover:after:w-full after:transition-[width]" href="/documents"><Paperclip className="w-4 h-4"/>Tài liệu</a>
         </nav>
 
         {/* Right: Search + mobile toggler */}
